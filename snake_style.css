@@ -1,0 +1,8 @@
+body {
+  background-image: url("img/off.png");
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+}
