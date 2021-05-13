@@ -1,8 +1,20 @@
 body {
-  background-image: url("img/off.png");
+  background: linear-gradient(rgb(107, 20, 52), rgba(24, 28, 122, 0.4)),
+    url(/img/off.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: sans-serif;
 }
 
 canvas {
   display: block;
-  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  /* border: 3px solid rgb(99, 49, 139); */
+  border: 3px solid rgb(170, 215, 81);
 }

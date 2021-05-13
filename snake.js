@@ -3,12 +3,12 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
 const ground = new Image();
-ground.src = "img/ground.png";
+ground.src = "img/ground.png"; // ячейки для еды 32px х 32px
 
 const foodImg = new Image();
 foodImg.src = "img/cookie.png";
 
-let box = 32;
+let box = 32; // width height
 let score = 0;
 
 let foodTr = {
@@ -26,6 +26,7 @@ document.addEventListener("keydown", direction);
 let dir;
 
 function direction(trxk) {
+  //trxk = event
   if (trxk.keyCode == 37 && dir != "right") dir = "left";
   else if (trxk.keyCode == 38 && dir != "down") dir = "up";
   else if (trxk.keyCode == 39 && dir != "left") dir = "right";
@@ -36,7 +37,7 @@ function eatTail(head, arr) {
   for (let i = 0; i < arr.length; i++) {
     if (head.x == arr[i].x && head.y == arr[i].y) {
       clearInterval(game);
-      alert("GAME OVER!");
+      alert(`Your score is: ${score},` + " GAME OVER!");
       window.location.reload();
     }
   }
@@ -48,13 +49,15 @@ function drawTr() {
   ctx.drawImage(foodImg, foodTr.x, foodTr.y);
 
   for (let i = 0; i < snake.length; i++) {
-    ctx.fillStyle = i == 0 ? "black" : "red";
+    ctx.fillStyle = i == 0 ? "black" : "#a77948";
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
   }
 
   ctx.fillStyle = "white";
-  ctx.font = "50px Arial";
-  ctx.fillText(score, box * 2.5, box * 1.7);
+  ctx.font = "20px Arial";
+  ctx.fillText(" MR.THETR1XIK", box * 13, box * 1.5);
+  ctx.fillText(`SCORE: ${score}`, box * 2, box * 1.5);
+
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
@@ -75,7 +78,8 @@ function drawTr() {
     snakeY > box * 17
   ) {
     clearInterval(game);
-    alert("GAME OVER!");
+
+    alert(`Your score is: ${score}` + " GAME OVER!");
     window.location.reload();
   }
 
