@@ -16,5 +16,11 @@ canvas {
   left: 0;
   margin: auto;
   /* border: 3px solid rgb(99, 49, 139); */
-  border: 3px solid rgb(111, 40, 129);
+  border: 15px solid rgb(111, 40, 129);
+}
+
+div {
+  /* 122 0 0 875 */
+  padding: 120px 0 0 0;
+  text-align: center;
 }

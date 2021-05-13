@@ -10,8 +10,19 @@
 </head>
 
 <body>
+
+
      <canvas id="game" width="608" height="608"></canvas>
      <script src="snake.js"></script>
+     <div class="turn">
+          <form action="snake.html">
+               <!--70 110 140 -->
+               <input type="submit" id="min" value="Slow" onclick="setSpeed(140)">
+               <input type="submit" id="avg" value="Medium" onclick="setSpeed(110)">
+               <input type="submit" id="max" value="High" onclick="setSpeed(70)">
+          </form>
+     </div>
+
 </body>
 
 </html>

@@ -42,7 +42,6 @@ function eatTail(head, arr) {
 
 function drawTr() {
   ctx.drawImage(ground, 0, 0);
-
   ctx.drawImage(foodImg, foodTr.x, foodTr.y);
 
   for (let i = 0; i < snake.length; i++) {
@@ -94,4 +93,11 @@ function drawTr() {
   snake.unshift(newHead);
 }
 
-let game = setInterval(drawTr, 110); // speed!
+let setSpeed = (speed) => {
+  localStorage.setItem("speed", speed.toString());
+};
+let speed = Number(localStorage.getItem("speed"));
+if (speed == null) {
+  speed = 110;
+}
+let game = setInterval(drawTr, speed);
