@@ -1,10 +1,7 @@
 const canvas = document.getElementById("game");
-
 const ctx = canvas.getContext("2d");
-
 const ground = new Image();
 ground.src = "img/ground.png"; // ячейки для еды 32px х 32px
-
 const foodImg = new Image();
 foodImg.src = "img/cookie.png";
 
@@ -12,8 +9,8 @@ let box = 32; // width height
 let score = 0;
 
 let foodTr = {
-  x: Math.floor(Math.random() * 17 + 1) * box, // от 1 до 17
-  y: Math.floor(Math.random() * 15 + 3) * box,
+  x: Math.floor(Math.random() * 17 + 1) * box,
+  y: Math.floor(Math.random() * 15 + 3) * box, //с учетом верхних полей
 };
 
 let snake = [];
@@ -97,4 +94,4 @@ function drawTr() {
   snake.unshift(newHead);
 }
 
-let game = setInterval(drawTr, 100);
+let game = setInterval(drawTr, 110); // speed!
