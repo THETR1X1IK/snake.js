@@ -23,4 +23,5 @@ div {
   /* 122 0 0 875 */
   padding: 120px 0 0 0;
   text-align: center;
+  transform: translate(0, -55px);
 }
