@@ -1,4 +1,4 @@
-//const canvas = $("#game");
+// const canvas = $("#game");
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const ground = new Image();
@@ -35,9 +35,10 @@ function eatTail(head, arr) {
   for (let i = 0; i < arr.length; i++) {
     if (head.x == arr[i].x && head.y == arr[i].y) {
       clearInterval(game);
-      let change = document.getElementById("stack");
-      change.innerHTML = score;
-
+      //  let change = document.getElementById("stack");
+      //  change.innerHTML = score;
+      let change = $("#stack");
+      change.html(score);
       //alert(`Your score is: ${score},` + " GAME OVER!");
       window.location.reload();
     }
@@ -78,8 +79,11 @@ function drawTr() {
     snakeY > box * 17
   ) {
     clearInterval(game);
-    let change = document.getElementById("stack");
-    change.innerHTML = score;
+    let change = $("#stack");
+    change.html(score);
+    //alert(change);
+    //     change.innerHTML = score;
+
     //alert(`Your score is: ${score}` + " GAME OVER!");
     window.location.reload();
   }
@@ -105,4 +109,7 @@ let speed = Number(localStorage.getItem("speed"));
 if (speed == null) {
   speed = 110;
 }
+$(document).ready(function () {
+  alert("DOM Content loaded");
+});
 let game = setInterval(drawTr, speed);
