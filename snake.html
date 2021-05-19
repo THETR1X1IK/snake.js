@@ -5,6 +5,7 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
      <link rel="stylesheet" href="snake_style.css">
      <title>SnakeTR1</title>
 </head>
@@ -13,7 +14,8 @@
 
 
      <canvas id="game" width="608" height="608"></canvas>
-     <script src="snake.js"></script>
+
+
      <div class="turn">
           <form action="snake.html">
                <!--70 110 140 -->
@@ -23,6 +25,17 @@
           </form>
      </div>
 
+     <div class="after" id="stack"></div>
+     <style>
+          .after {
+               color: rgb(172, 33, 33);
+               position: relative;
+               font-size: 80px;
+               transform: translate(0, 180px);
+          }
+     </style>
+     <script src="snake.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </body>
 
 </html>

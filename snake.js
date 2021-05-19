@@ -1,3 +1,4 @@
+//const canvas = $("#game");
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const ground = new Image();
@@ -34,7 +35,10 @@ function eatTail(head, arr) {
   for (let i = 0; i < arr.length; i++) {
     if (head.x == arr[i].x && head.y == arr[i].y) {
       clearInterval(game);
-      alert(`Your score is: ${score},` + " GAME OVER!");
+      let change = document.getElementById("stack");
+      change.innerHTML = score;
+
+      //alert(`Your score is: ${score},` + " GAME OVER!");
       window.location.reload();
     }
   }
@@ -74,8 +78,9 @@ function drawTr() {
     snakeY > box * 17
   ) {
     clearInterval(game);
-
-    alert(`Your score is: ${score}` + " GAME OVER!");
+    let change = document.getElementById("stack");
+    change.innerHTML = score;
+    //alert(`Your score is: ${score}` + " GAME OVER!");
     window.location.reload();
   }
 
